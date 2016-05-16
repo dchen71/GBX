@@ -7,14 +7,14 @@
 "use strict";
 
 //Load necessary react components
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  Image,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+var React = require('react');
+var Native = require('react-native');
+const AppRegistry = require('AppRegistry');
+var StyleSheet = require('StyleSheet');
+var Image = require("Image");
+var Text = require("Text");
+var View = require('View');
+
 
 //Main page
 //Probably just show new events at top
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   },
 });
 
-class GBX extends Component {
+class GBX extends React.Component {
   render() {
     return (
       <View style={styles.container}>
