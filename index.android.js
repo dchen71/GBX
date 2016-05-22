@@ -8,16 +8,23 @@
 
 //Load necessary react components
 var React = require('react');
-var Native = require('react-native');
+var ReactNative = require('react-native');
 const AppRegistry = require('AppRegistry');
-var StyleSheet = require('StyleSheet');
-var Image = require("Image");
-var Text = require("Text");
-var View = require('View');
+var {
+  StyleSheet,
+  Text,
+  View,
+} = ReactNative;
+
 
 
 //Main page
 //Probably just show new events at top
+//Main banner is current event
+//Schedule for angel day
+//News tab
+//Current rate up
+
 
 //Quest Page
 //Lists quests
