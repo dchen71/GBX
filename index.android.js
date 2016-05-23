@@ -17,7 +17,7 @@ var {
 } = ReactNative;
 var ScrollView = require('ScrollView');
 var Toolbar = require('./js/toolbar');
-
+var Tabs = require('./js/tabs')
 
 //Main page
 //Probably just show new events at top
@@ -53,31 +53,36 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     color: '#333333',
     marginBottom: 5,
-  },
-  footer: {
-    flex: 1,
-    margin: 10,
   }
 });
 
 class GBX extends React.Component {
+  //Constructor to set initial state
+  constructor(props){
+    super(props);
+    this.state = {page:'Home'};
+  }
   render() {
     return (
       <View>
         <Toolbar />
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
-        <View style={styles.footer}>
-          <ScrollView></ScrollView>
-          <Text>footer</Text>
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Welcome to React Native!
+          </Text>
+          <Text style={styles.instructions}>
+            To get started, edit index.android.js
+          </Text>
+          <Text style={styles.instructions}>
+            Shake or press menu button for dev menu
+          </Text>
         </View>
+        <Tabs selected={this.state.page} style={{backgroundColor:'white'}}
+              selectedStyle={{color:'red'}} onSelect={el=>this.setState({page:el.props.name})}>
+            <Text name="News" selectedIconStyle={{borderTopWidth:2,borderTopColor:'red'}}>News</Text>
+            <Text name="Quests" selectedIconStyle={{borderTopWidth:2,borderTopColor:'red'}}>Quests</Text>
+            <Text name="Characters" selectedIconStyle={{borderTopWidth:2,borderTopColor:'red'}}>Characters</Text>
+        </Tabs>
       </View>
     );
   }
