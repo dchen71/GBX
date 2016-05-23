@@ -15,6 +15,7 @@ var {
   Text,
   View,
 } = ReactNative;
+var ScrollView = require('ScrollView');
 var Toolbar = require('./js/toolbar');
 
 
@@ -53,6 +54,10 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  footer: {
+    flex: 1,
+    margin: 10,
+  }
 });
 
 class GBX extends React.Component {
@@ -69,6 +74,10 @@ class GBX extends React.Component {
         <Text style={styles.instructions}>
           Shake or press menu button for dev menu
         </Text>
+        <View style={styles.footer}>
+          <ScrollView></ScrollView>
+          <Text>footer</Text>
+        </View>
       </View>
     );
   }
