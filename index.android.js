@@ -15,7 +15,7 @@ var {
   Text,
   View,
 } = ReactNative;
-
+var Toolbar = require('./js/toolbar');
 
 
 //Main page
@@ -68,6 +68,7 @@ class GBX extends React.Component {
         <Text style={styles.instructions}>
           Shake or press menu button for dev menu
         </Text>
+        <Toolbar />
       </View>
     );
   }
