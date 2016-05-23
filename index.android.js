@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
 class GBX extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
+        <Toolbar />
         <Text style={styles.welcome}>
           Welcome to React Native!
         </Text>
@@ -68,7 +69,6 @@ class GBX extends React.Component {
         <Text style={styles.instructions}>
           Shake or press menu button for dev menu
         </Text>
-        <Toolbar />
       </View>
     );
   }

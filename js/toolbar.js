@@ -2,6 +2,7 @@
 
 'use strict';
 
+//Load required modules and packages
 var React = require('react');
 var ReactNative = require('react-native');
 var {
@@ -13,10 +14,19 @@ var {
 
 var ToolbarAndroid = require('ToolbarAndroid');
 
+
+var styles = StyleSheet.create({
+  toolbar: {
+    backgroundColor: '#fafafa',
+    height: 56,
+  },
+});
+
+//Toolbar
 var ToolbarAndroidExample = React.createClass({
   statics: {
-    title: '<ToolbarAndroid>',
-    description: 'Examples of using the Android toolbar.'
+    title: 'Android Toolbar',
+    description: 'Toolbar to load pages'
   },
   getInitialState: function() {
     return {
@@ -36,9 +46,7 @@ var ToolbarAndroidExample = React.createClass({
           onActionSelected={this._onActionSelected}
           onIconClicked={() => this.setState({actionText: 'Icon clicked'})}
           style={styles.toolbar}
-          subtitle={this.state.actionText}
-          title="Toolbar" />
-        <Text>{this.state.actionText}</Text>
+          title="GBX" />
       </View>
     );
   },
@@ -49,18 +57,12 @@ var ToolbarAndroidExample = React.createClass({
   },
 });
 
+//Toolbar options
 var toolbarActions = [
   {title: 'News'},
   {title: 'Quests'},
   {title: 'Characters'},
   {title: 'Tools'},
 ];
-
-var styles = StyleSheet.create({
-  toolbar: {
-    backgroundColor: '#fafafa',
-    height: 56,
-  },
-});
 
 module.exports = ToolbarAndroidExample;
